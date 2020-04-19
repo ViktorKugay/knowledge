@@ -19,7 +19,7 @@
       "git add"
     ]
   },
-  "author": "Viktor Kugay <v.kugay@tinkoff.ru>",
+  "author": "Viktor Kugay",
   "license": "MIT",
   "dependencies": {
     "husky": "^3.0.2",
