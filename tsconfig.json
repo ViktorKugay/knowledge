@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "outDir": "./build",
+    "strict": true,
+    "allowJs": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es6", "dom"]
+  }
+}
