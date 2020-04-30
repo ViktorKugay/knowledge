@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6
+    restart: always
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.1/16 # конфигурация внешнего порта для подключения к сторонним контейнерам
