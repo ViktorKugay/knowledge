@@ -1,7 +1,7 @@
 /**
  * @See https://en.wikipedia.org/wiki/Pisano_period
- * 
- * Задача: Даны целые числа 1 < n < 10 ^ 18 и 2 < m < 10 ^ 5, 
+ *
+ * Задача: Даны целые числа 1 < n < 10 ^ 18 и 2 < m < 10 ^ 5,
  * необходимо найти остаток от деления nn-го числа Фибоначчи на m.
  */
 export function pizano(m: BigInt) {
@@ -22,11 +22,11 @@ export function pizano(m: BigInt) {
      */
     if (pizano[length - 1] === pizano[1] && pizano[length - 2] === pizano[0]) {
       /**
-       * очищаем две последних цифра, 
+       * очищаем две последних цифра,
        * которые являются началом периода
        */
       pizano.length = length - 2;
-      
+
       return pizano;
     }
   }
@@ -34,10 +34,13 @@ export function pizano(m: BigInt) {
   return pizano;
 }
 
-process.stdin.on('data', (data) => {
-  const [n, m] = data.toString().split(' ').map(BigInt);
+process.stdin.on('data', data => {
+  const [n, m] = data
+    .toString()
+    .split(' ')
+    .map(BigInt);
   const period = pizano(m);
   const index = Number(n % BigInt(period.length));
-  
+
   return Number(period[index]);
 });

@@ -1,6 +1,6 @@
 /**
  * Шаг слияния, выполняющий O(n^1) работы.
- * 
+ *
  * @param  {Array<number>} arr1 - неотсортированный массив
  * @param  {Array<number>} arr2 - неотсортированный массив
  * @return {Array<number>} - отсортированный массив
@@ -16,16 +16,16 @@ export function merge(arr1: Array<number>, arr2: Array<number>) {
   }
 
   return [...result, ...arr1.slice(i), ...arr2.slice(j)];
-};
+}
 
 /**
  * Темп сжатия работы совпадает с темпов разрастания подзадачи, т.е.
  * на каждом шаге производится 2 рекурсивных вызова, каждый из которых
- * оперирует половиной данных с предыдущего шага. 
- * 
- * Таким образом, согласно основному методу a = b^d, т.е. 
+ * оперирует половиной данных с предыдущего шага.
+ *
+ * Таким образом, согласно основному методу a = b^d, т.е.
  * сложность работы алгоритма O(n log n);
- * 
+ *
  * @param  {Array<number>} arr - неотсортированный массив
  * @return {Array<number>} - отсортированный массив
  */
@@ -38,6 +38,6 @@ export function mergeSort(arr: Array<number>) {
   const rightHalf = arr.slice(Math.floor(arr.length / 2));
 
   return merge(mergeSort(leftHalf), mergeSort(rightHalf));
-};
+}
 
 console.log(mergeSort([4, 2, 6, 3, 8, 1, 10]));

@@ -1,3 +1,1 @@
-export function closesSplitPair() {
-    
-}
+export function closesSplitPair() {}

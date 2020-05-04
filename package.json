@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/ViktorKugay/knowledge",
   "scripts": {
-    "format": "prettier --write --config .prettierrc"
+    "format": "prettier --write \"**/*.{ts,tsx,js}\""
   },
   "husky": {
     "hooks": {
