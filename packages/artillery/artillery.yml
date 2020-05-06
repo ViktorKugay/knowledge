@@ -1,0 +1,30 @@
+config:
+  target: http://localhost:3000
+  phases:
+    - duration: 60
+      arrivalRate: 20
+      name: "Register"
+    - duration: 60
+      arrivalRate: 20
+      name: "SetAnswer"
+  processor: "./scipts.js"
+scenarios:
+  - flow:
+    - get: 
+        url: "/interactives"
+        capture: 
+          - json: "$.payload.token"
+            as: token  
+          - json: "$.payload.interactives[0].question.id" 
+            as: id
+    - put:
+        url: "/interactives"
+        headers: 
+          Authorization: "Bearer {{ token }}"
+        json: 
+          answer: true
+          id: "{{ id }}"
+        beforeRequest: "interceptor"
+        afterResponse: "interceptor"
+
+# MULTICORE=true
