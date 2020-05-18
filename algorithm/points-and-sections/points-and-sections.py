@@ -8,7 +8,7 @@ from bisect import bisect_right
 def func0(i): 
     return i[0]
 
-def func1(i): 
+def func1(i): exercises
     return i[1]
 
 def main():
