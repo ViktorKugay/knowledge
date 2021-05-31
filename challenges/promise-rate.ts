@@ -12,7 +12,6 @@ async function main(urls: string[], rateLimit: number) {
 
   return new Promise(resolve => {
     const request = url => {
-
       counter++;
       currentIndex++;
 
@@ -21,11 +20,11 @@ async function main(urls: string[], rateLimit: number) {
         cache.push(urls[duplicateIndex]);
       } else {
         delay(1000).then(() => {
-          console.log(url);  
+          console.log(url);
 
           counter--;
           cache.push(url);
-  
+
           if (currentIndex === urls.length) {
             resolve(cache);
           } else {

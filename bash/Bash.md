@@ -2,13 +2,13 @@
 
 ## Tutorial about useful Bash utilities
 
-## Kill process which listened particular port
+## Убить процесс на порту
 
-`lsof -ti tcp:8080 | xargs kill` - 1. list of all procesess which use port 2. take all args from lsof and kill all procesess.
+`lsof -ti tcp:8080 | xargs kill`
 
 ## xargs
 
-Command use standart input and execute handle command with input used like argument.
+использовать стандартный поток ввода/вывода
 
 `echo hello | xargs rm`
 
@@ -26,17 +26,15 @@ Command use standart input and execute handle command with input used like argum
 
 _curl options url_
 
-### Common options
+- `-v` показать всю информацию о запросе
+- `-o` записать лог в файл
 
-- `-v` shows all information about request and also shows info about response. Especially useful with redirect response
-- `-o` write content page to file
+### Cookies
 
-### Coockies
+- `-b` сохранить куки в файл
+- `-c` добавить куки из файла
 
-- `-b` save cookies to file
-- `-c` send cookie to server from file
-
-### Methods and data
+### Методы и данные
 
 - `-d` send data using POST method. Template **'{"example": "placeholder"}'**. Configure method with -X options
 - `-G` if exists all data sended with -d options will be send like GET request
@@ -61,11 +59,9 @@ _curl options url_
 - `-maxdepth` max depth search
 - **-exec `some action command` {} \;** - execute some action to files
 
-- `yarn workspace @specials/cli add` - добавить зависимость в workspace
 - `find` - поиск файлов в ФС
 - `realpath` - конструктор абсолютных путей
 - `grep` - поиск по содержимому файла
 - `echo` - печать на экран
 - `cat` - печать на экран содержимого файла
 - `HOME` - HOME переменная
-- `sudo openvpn --config ~/Documents/datamind.ru_v.kugay_servers.ovpn`

@@ -1,6 +1,6 @@
 export function objectCreate(prototype) {
-    function Constructor() {}
-    Constructor.prototype = prototype;
+  function Constructor() {}
+  Constructor.prototype = prototype;
 
-    return new Constructor();
+  return new Constructor();
 }
