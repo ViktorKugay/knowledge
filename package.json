@@ -32,7 +32,7 @@
     "ts-node": "^8.3.0",
     "typescript": "^3.6.2",
     "typescript-json-schema": "^0.42.0",
-    "xlsx": "^0.16.0",
+    "xlsx": "^0.17.0",
     "yarnhook": "^0.4.2"
   }
 }
